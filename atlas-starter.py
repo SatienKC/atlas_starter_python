@@ -6,8 +6,9 @@ import sys
 # you should not store your password in plain-text here.
 
 try:
-  client = pymongo.MongoClient(<Your Atlas Connection String>)
-  
+  client = pymongo.MongoClient("mongodb+srv://Tien:F@cluster0.ngwxw2i.mongodb.net/?retryWrites=true&w=majority")
+  client.admin.command('ping')
+  print("Pinged your deployment. You successfully connected to MongoDB!")
 # return a friendly error if a URI error is thrown 
 except pymongo.errors.ConfigurationError:
   print("An Invalid URI host error was received. Is your Atlas host name correct in your connection string?")
